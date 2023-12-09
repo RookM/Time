@@ -1,8 +1,13 @@
+@font-face {
+    font-family: "Digital Clock";
+    src: url("../font/digital-7.mono.ttf");
+}
 body {
     height: 100vh;
 }
 .timer {
     height: 100%;
+    font-family: "Digital Clock", serif;
     display: flex;
     justify-content: center;
     align-items: center;
