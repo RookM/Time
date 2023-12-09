@@ -12,34 +12,14 @@ const update = () => {
     }
     if (time <= 0) {
         clearInterval(i);
-    } else if(time <= 0.03) {
-        interval = 1000;
-        clearInterval(i);
-        i = setInterval(update, interval);
-    } else if(time <= 0.1) {
-        interval = 500;
-        clearInterval(i);
-        i = setInterval(update, interval);
-    } else if(time <= 0.2) {
-        interval = 250;
-        clearInterval(i);
-        i = setInterval(update, interval);
-    } else if(time <= 0.5) {
-        interval = 150;
-        clearInterval(i);
-        i = setInterval(update, interval);
-    } else if (time <= 1) {
-        interval = 100;
-        clearInterval(i);
-        i = setInterval(update, interval);
-    } else if (time <= 2) {
-        interval = 60;
-        clearInterval(i);
-        i = setInterval(update, interval);
-    } else if (time <= 3) {
-        interval = 20;
+    } else {
+        interval = 64 / time;
         clearInterval(i);
         i = setInterval(update, interval);
     }
 }
 let i = setInterval(update, interval);
+
+if (time == 0) {
+
+}
