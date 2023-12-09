@@ -11,10 +11,10 @@ const update = () => {
     } else {
         clockNum = "00:00:0" + time;
     }
-    console.log(clockNum);
     document.getElementById("countdownText").innerHTML = clockNum;
     if (time <= 0) {
         clearInterval(i);
+        afterTimer();
     } else {
         interval = 64 / time;
         clearInterval(i);
@@ -23,6 +23,18 @@ const update = () => {
 }
 let i = setInterval(update, interval);
 
-if (time == 0) {
-    
+const addElementMine = (typ, clas, conten) => {
+    const ele = document.createElement(typ);
+    if(clas !== "") {
+        ele.classList.add(clas);
+    }
+    ele.textContent = conten;
+    return ele;
+}
+
+const afterTimer = () => {
+    const body = document.getElementById("body");
+    body.innerHTML = "";
+    const pEl1 = addElementMine("p", "", "hi");
+    body.appendChild(pEl1);
 }

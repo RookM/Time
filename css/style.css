@@ -13,4 +13,9 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
+    visibility: visible;
+}
+.invis {
+    visibility: hidden;
+    display: none;
 }
