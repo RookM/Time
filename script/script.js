@@ -21,5 +21,5 @@ const update = () => {
 let i = setInterval(update, interval);
 
 if (time == 0) {
-
+    
 }
