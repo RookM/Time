@@ -3,13 +3,16 @@ let interval = 10;
 console.log('the file loaded lmao');
 const update = () => {
     time = Math.round((time - 0.01) * 100) / 100;
-    if ((time * 100) % 100 == 0) {
-        document.getElementById("countdownText").innerHTML = "00:00:" + time + ".00";
-    } else if ((time * 100) % 10 == 0) {
-        document.getElementById("countdownText").innerHTML = "00:00:" + time + "0";
+    let clockNum;
+    if (Math.round(time * 100) % 100 == 0) {
+        clockNum = "00:00:0" + time + ".00";
+    } else if (Math.round(time * 100) % 10 == 0) {
+        clockNum = "00:00:0" + time + "0";
     } else {
-        document.getElementById("countdownText").innerHTML = "00:00:" + time;
+        clockNum = "00:00:0" + time;
     }
+    console.log(clockNum);
+    document.getElementById("countdownText").innerHTML = clockNum;
     if (time <= 0) {
         clearInterval(i);
     } else {
